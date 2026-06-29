@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유달임 | 디지털 명함 & 이력서</title>
+    <meta name="description" content="안녕하세요! 사무직 지원자 유달임입니다. 김치처럼 어디서든 빛나는 만능 캐릭터가 되겠습니다 🥬✨">
+
+    <!-- Open Graph (카카오톡, 페이스북, 링크드인 등에서 링크 공유 시 미리보기) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="유달임 | 디지털 명함 & 이력서">
+    <meta property="og:description" content="🥬 김치같은 사람, 유달임입니다! 배추일때는 가능성을, 새김치일때는 신선함을, 묵은김치일때는 만능 캐릭터가 되겠습니다 💪🔥">
+    <meta property="og:image" content="KakaoTalk_20260609_164812771.jpg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- Twitter Card (트위터/X 공유 시 미리보기) -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="유달임 | 디지털 명함 & 이력서">
+    <meta name="twitter:description" content="🥬 김치같은 사람, 유달임입니다! 배추일때는 가능성을, 새김치일때는 신선함을, 묵은김치일때는 만능 캐릭터가 되겠습니다 💪🔥">
+    <meta name="twitter:image" content="KakaoTalk_20260609_164812771.jpg">
+    <!-- Google Fonts: Pretendard-like + Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome 6.5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Mesh Gradient Background -->
+    <div class="bg-mesh"></div>
+    <div class="bg-grain"></div>
+
+    <div class="main-container">
+        <div class="card-container" id="cardContainer">
+            
+            <!-- Floating Toggle Button -->
+            <button class="toggle-btn" id="toggleBtn" aria-label="화면 전환">
+                <span class="btn-icon-wrap">
+                    <i class="fa-solid fa-file-lines btn-icon-resume"></i>
+                    <i class="fa-solid fa-id-card btn-icon-card"></i>
+                </span>
+                <span class="btn-text">이력서 보기</span>
+            </button>
+
+            <!-- Flipping Wrapper -->
+            <div class="card-wrapper" id="cardWrapper">
+                
+                <!-- ====== FRONT: Business Card (명함) ====== -->
+                <div class="card-face card-front">
+                    <!-- Decorative top accent bar -->
+                    <div class="card-accent-bar"></div>
+
+                    <div class="card-header">
+                        <div class="avatar-container">
+                            <img src="KakaoTalk_20260609_164812771.jpg" alt="유달임 프로필 사진" class="profile-img">
+                            <div class="avatar-status" title="구직 중">
+                                <i class="fa-solid fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h1 class="name-kr">유달임</h1>
+                            <p class="name-en">Dalim Yu</p>
+                            <div class="job-badges">
+                                <span class="job-badge">사무직 지원</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Intro quote -->
+                    <div class="intro-quote">
+                        <p>저는 김치같은 사람입니다 🥬✨<br>
+                        배추일때는 가능성을 품은 사람 🌱<br>
+                        새김치일때는 신선함을 주는 사람 🥗💚<br>
+                        묵은김치일때는 여기저기 쓰이는<br>
+                        만능 캐릭터가 되겠습니다! 💪🔥</p>
+                    </div>
+
+                    <div class="card-body">
+                        <a href="mailto:dbekfdla1@naver.com" class="contact-item clickable">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">이메일</span>
+                                <span class="contact-value">dbekfdla1@naver.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:010-4099-6937" class="contact-item clickable">
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">연락처</span>
+                                <span class="contact-value">010-4099-6937</span>
+                            </div>
+                        </a>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">지역</span>
+                                <span class="contact-value">서울특별시</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="social-links">
+                            <a href="#" target="_blank" aria-label="이메일 보내기"><i class="fa-solid fa-paper-plane"></i></a>
+                            <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank" aria-label="블로그"><i class="fa-solid fa-blog"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ====== BACK: Resume (이력서) ====== -->
+                <div class="card-face card-back">
+                    <div class="resume-header">
+                        <div class="resume-header-top">
+                            <h2 class="resume-title">이력서</h2>
+                            <span class="resume-badge">Open to Work</span>
+                        </div>
+                        <p class="resume-subtitle">경험과 성실함으로 팀의 뒤를 든든하게 지키는 유달임입니다.</p>
+                    </div>
+
+                    <div class="resume-scroll-container">
+                        <!-- About Section -->
+                        <div class="resume-section">
+                            <h3 class="section-title"><i class="fa-solid fa-sparkles"></i> 핵심 역량</h3>
+                            <div class="strength-grid">
+                                <div class="strength-card">
+                                    <i class="fa-solid fa-flag-checkered"></i>
+                                    <span>맡은 업무를 끝까지 마무리하는 책임감</span>
+                                </div>
+                                <div class="strength-card">
+                                    <i class="fa-solid fa-book-open"></i>
+                                    <span>새로운 일을 열심히 배우려는 자세</span>
+                                </div>
+                                <div class="strength-card">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span>단 한번도 지각 없는 근태 관리</span>
+                                </div>
+                                <div class="strength-card">
+                                    <i class="fa-solid fa-comments"></i>
+                                    <span>팀원들과의 원활한 의사소통</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- About Section -->
+                        <div class="resume-section">
+                            <h3 class="section-title"><i class="fa-solid fa-user"></i> 자기소개</h3>
+                            <p class="section-text">
+                                개인 사정으로 잠시 일을 쉬는 동안에도 최신 실무 도구(Figma, Notion, Google Workspace)와 웹 기초 기술을 꾸준히 학습하며 업무 감각을 유지해 왔습니다. 이 기간 동안 직접 이 웹 포트폴리오를 기획하고 제작한 경험은, 제가 새로운 환경에서도 능동적으로 적응하고 성장할 수 있음을 보여줍니다.
+                            </p>
+                        </div>
+
+                        <!-- Experience Section -->
+                        <div class="resume-section">
+                            <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> 경력 및 활동</h3>
+                            <div class="timeline-item current">
+                                <div class="timeline-meta">
+                                    <span class="timeline-date">2024 — 현재</span>
+                                    <span class="timeline-badge">자기개발</span>
+                                </div>
+                                <h4 class="timeline-title">역량 강화 & 포트폴리오 제작</h4>
+                                <ul class="timeline-list">
+                                    <li>Figma를 활용한 UI/UX 디자인 실습 및 프로토타이핑</li>
+                                    <li>HTML/CSS 기초 웹 개발 학습 → 본 웹 명함 직접 기획·제작</li>
+                                    <li>Notion, Slack, Google Workspace 등 협업 도구 실무 수준 습득</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-meta">
+                                    <span class="timeline-date">2021 — 2024</span>
+                                    <span class="timeline-badge">정규직</span>
+                                </div>
+                                <h4 class="timeline-title">서비스 운영 및 사무 지원</h4>
+                                <p class="timeline-org-name"><i class="fa-regular fa-building"></i> 스타트업 지원센터</p>
+                                <ul class="timeline-list">
+                                    <li>월간 데이터 리포트 작성 및 부서 간 회의 일정 총괄 관리</li>
+                                    <li>고객 응대 및 서비스 운영 프로세스 표준화 기여</li>
+                                    <li>문서 양식 체계화로 팀 업무 효율 30% 개선</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Skills Section -->
+                        <div class="resume-section">
+                            <h3 class="section-title"><i class="fa-solid fa-gears"></i> 기술 & 도구</h3>
+                            <div class="skills-tags">
+                                <span class="skill-tag"><i class="fa-solid fa-file-excel"></i> MS Excel / PPT</span>
+                                <span class="skill-tag"><i class="fa-brands fa-google"></i> Google Workspace</span>
+                                <span class="skill-tag"><i class="fa-solid fa-pen-nib"></i> Figma</span>
+                                <span class="skill-tag"><i class="fa-solid fa-n"></i> Notion</span>
+                                <span class="skill-tag"><i class="fa-brands fa-slack"></i> Slack</span>
+                                <span class="skill-tag"><i class="fa-solid fa-code"></i> HTML / CSS</span>
+                                <span class="skill-tag"><i class="fa-solid fa-headset"></i> CS 운영</span>
+                            </div>
+                        </div>
+
+                        <!-- Education Section -->
+                        <div class="resume-section">
+                            <h3 class="section-title"><i class="fa-solid fa-graduation-cap"></i> 학력</h3>
+                            <div class="timeline-item">
+                                <div class="timeline-meta">
+                                    <span class="timeline-date">2017 — 2021</span>
+                                </div>
+                                <h4 class="timeline-title">경영정보학과 졸업</h4>
+                                <p class="timeline-org-name"><i class="fa-regular fa-building-columns"></i> 한국대학교</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

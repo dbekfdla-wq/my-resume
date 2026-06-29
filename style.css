@@ -1,0 +1,495 @@
+/* Modern Reset & Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+}
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #ff7e5f 0%, #ff6b8b 50%, #feb47b 100%); /* Warm sunset peach/coral */
+    --bg-light: #fafaf9; /* Warm off-white */
+    --card-bg: rgba(255, 255, 255, 0.9); /* Bright white glass */
+    --card-border: rgba(255, 255, 255, 0.8);
+    --text-main: #292524; /* Warm charcoal */
+    --text-muted: #78716c; /* Warm stone gray */
+    --glass-blur: blur(20px);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background Glowing Blurs (Ultra Bright Warm Pastel Colors) */
+.bg-blur {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 1;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.bg-blur-1 {
+    width: 350px;
+    height: 350px;
+    background: #ffd6e8; /* Soft warm rose */
+    top: -50px;
+    left: -50px;
+}
+
+.bg-blur-2 {
+    width: 400px;
+    height: 400px;
+    background: #ffedd5; /* Soft apricot/orange */
+    bottom: -50px;
+    right: -50px;
+}
+
+/* Main Container */
+.main-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 10;
+}
+
+/* Card Widget Container */
+.card-container {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: 640px;
+    perspective: 1500px; /* Essential for 3D flip */
+}
+
+/* Toggle Button (Fixed Position - Warm Coral Theme) */
+.toggle-btn {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    z-index: 50;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    background: var(--primary-gradient);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(255, 126, 95, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(255, 126, 95, 0.5);
+}
+
+.toggle-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.toggle-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.5s ease;
+}
+
+.card-container.flipped .toggle-btn i {
+    transform: rotate(180deg);
+}
+
+/* Flipping Wrapper */
+.card-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Flip Action Triggered by class */
+.card-container.flipped .card-wrapper {
+    transform: rotateY(180deg);
+}
+
+/* Card Faces (Front & Back) */
+.card-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 28px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: 0 20px 40px rgba(255, 126, 95, 0.08), 0 5px 15px rgba(120, 113, 108, 0.05);
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-front {
+    justify-content: space-between;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    justify-content: flex-start;
+}
+
+/* FRONT FACE (명함) STYLING */
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.avatar-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 3px;
+    background: var(--primary-gradient);
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(255, 126, 95, 0.2);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #ffffff;
+    display: block;
+}
+
+.name-kr {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+    color: #1c1917;
+}
+
+.name-en {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.job-title {
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    background: rgba(255, 126, 95, 0.08);
+    border-radius: 50px;
+    color: #ff6b8b;
+    font-weight: 600;
+    border: 1px solid rgba(255, 126, 95, 0.15);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 40px 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.95rem;
+    color: #44403c;
+}
+
+.contact-item i {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 126, 95, 0.06);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff6b8b;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 126, 95, 0.1);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #57534e;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary-gradient);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(255, 126, 95, 0.25);
+    border-color: transparent;
+}
+
+/* BACK FACE (이력서) STYLING */
+.resume-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 15px;
+}
+
+.resume-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.resume-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* Scrollable Container for Resume content */
+.resume-scroll-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+    margin-bottom: 60px; /* Space for the floating button */
+}
+
+/* Custom Scrollbar for Resume */
+.resume-scroll-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.resume-scroll-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.01);
+}
+
+.resume-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.resume-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.resume-section {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #44403c;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-title i {
+    color: #ff6b8b;
+    font-size: 0.95rem;
+}
+
+.section-text {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Timeline Items */
+.timeline-item {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid rgba(255, 107, 139, 0.2);
+    margin-bottom: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff6b8b;
+    border: 2px solid #ffffff;
+}
+
+.timeline-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.timeline-org {
+    font-weight: 600;
+    color: #ff6b8b;
+}
+
+.timeline-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #2b2b2b;
+}
+
+.timeline-desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+/* Skill Tags */
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 50px;
+    color: #57534e;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: rgba(255, 107, 139, 0.08);
+    border-color: rgba(255, 107, 139, 0.2);
+    color: #ff6b8b;
+    transform: translateY(-2px);
+}
+
+/* MOBILE RESPONSIVE STYLES */
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+
+    .main-container {
+        padding: 15px;
+    }
+
+    .card-container {
+        height: 85vh;
+        max-height: 600px;
+    }
+
+    .card-face {
+        padding: 24px;
+        border-radius: 24px;
+    }
+
+    .card-header {
+        margin-top: 10px;
+    }
+
+    .avatar-container {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 12px;
+    }
+
+    .avatar-gradient span {
+        font-size: 1.5rem;
+    }
+
+    .name-kr {
+        font-size: 1.5rem;
+    }
+
+    .name-en {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .job-title {
+        font-size: 0.85rem;
+        padding: 4px 12px;
+    }
+
+    .card-body {
+        margin: 25px 0;
+        gap: 12px;
+    }
+
+    .contact-item {
+        font-size: 0.85rem;
+    }
+
+    .contact-item i {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+    }
+
+    .social-links a {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+    }
+
+    .toggle-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+
+    .resume-scroll-container {
+        margin-bottom: 50px;
+    }
+}
